@@ -1,12 +1,16 @@
 import React from "react";
 import Planeteer from "./Planeteer";
 
-function PlaneteersContainer() {
+const PlaneteersContainer = (props) => {
+  const { planeteers } = props;
+
   return (
-    <ul className="cards">
-      {/* render a list of <Planeteer> components in here */}
-    </ul>
+    <div className="PlaneteersContainer">
+      {planeteers.map((planeteer) => (
+        <Planeteer key={planeteer.id} planeteer={planeteer} />
+      ))}
+    </div>
   );
-}
+};
 
 export default PlaneteersContainer;
